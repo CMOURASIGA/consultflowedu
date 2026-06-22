@@ -1,0 +1,1957 @@
+# Documento Base de Desenvolvimento
+
+# MVP ConsultFlow Edu
+
+## Plataforma Inteligente de Atendimento e Gestão de Demandas Escolares
+
+**Marca:** Consult Services Tecnologia
+**Produto:** ConsultFlow Edu
+**Assinatura:** Processos organizados. Decisões mais claras.
+**Objetivo:** MVP para submissão, validação e evolução no contexto do Projeto FAPERJ/Centelha RJ III.
+
+---
+
+# 1. Visão Geral do Produto
+
+O **ConsultFlow Edu** é uma plataforma web para instituições de ensino que organiza solicitações recebidas de responsáveis, alunos e equipes internas, transformando mensagens dispersas em demandas rastreáveis, classificadas, priorizadas e acompanhadas.
+
+A solução deverá usar inteligência artificial para apoiar a triagem das demandas, sugerir respostas, indicar setor responsável, gerar resumo e alimentar indicadores de gestão.
+
+O MVP não deve depender obrigatoriamente da integração com WhatsApp/Meta. A primeira versão deverá funcionar com:
+
+* formulário público de solicitação;
+* cadastro manual de demanda pela secretaria;
+* painel interno de atendimento;
+* classificação automática por IA;
+* controle de status, responsável e prazo;
+* base de conhecimento;
+* dashboard de indicadores.
+
+A integração com WhatsApp Cloud API deverá ser prevista como módulo futuro, mas não bloqueante para o MVP.
+
+---
+
+# 2. Objetivo do MVP
+
+Construir uma primeira versão funcional do ConsultFlow Edu para:
+
+1. Validar a dor de atendimento e gestão de demandas em escolas.
+2. Demonstrar uso prático de IA aplicada à operação escolar.
+3. Permitir pilotos com escolas reais.
+4. Gerar dados para evolução do produto.
+5. Sustentar a proposta técnica e comercial do projeto FAPERJ.
+
+---
+
+# 3. Problema que o Produto Resolve
+
+Escolas recebem solicitações por WhatsApp, e-mail, telefone, formulários, conversas presenciais e mensagens informais. Muitas dessas solicitações não viram registro formal, não possuem responsável definido, não têm prazo claro e não geram indicadores.
+
+Isso causa:
+
+* perda de mensagens;
+* retrabalho da secretaria;
+* demora no atendimento;
+* falta de histórico;
+* baixa rastreabilidade;
+* dificuldade de priorização;
+* sobrecarga de setores;
+* gestores sem visão consolidada;
+* responsáveis sem retorno claro.
+
+---
+
+# 4. Proposta de Valor
+
+O ConsultFlow Edu transforma solicitações escolares em demandas organizadas, com protocolo, categoria, prioridade, responsável, prazo, histórico e indicadores.
+
+A plataforma ajuda escolas a:
+
+* reduzir perda de solicitações;
+* melhorar o tempo de resposta;
+* organizar o atendimento da secretaria;
+* dar visibilidade para direção e coordenação;
+* padronizar respostas;
+* medir volume e qualidade do atendimento;
+* reduzir retrabalho operacional.
+
+---
+
+# 5. Público-Alvo Inicial
+
+## Público Principal
+
+Escolas particulares pequenas e médias.
+
+## Usuários Internos
+
+* Secretaria;
+* Financeiro;
+* Coordenação;
+* Direção;
+* TI/Suporte;
+* Equipe administrativa.
+
+## Solicitantes Externos
+
+* Pais e responsáveis;
+* Alunos;
+* Colaboradores;
+* Fornecedores, em etapa futura.
+
+---
+
+# 6. Nome, Marca e Identidade
+
+## Marca Mãe
+
+Consult Services Tecnologia
+
+## Produto
+
+ConsultFlow Edu
+
+## Aplicação da Marca
+
+Usar a marca Consult Services Tecnologia como assinatura institucional.
+
+Exemplo:
+
+**ConsultFlow Edu**
+Uma solução da Consult Services Tecnologia
+Processos organizados. Decisões mais claras.
+
+---
+
+# 7. Direção Visual
+
+A interface deve seguir uma linha visual corporativa, limpa, tecnológica e objetiva. O sistema deve transmitir organização, confiança e clareza.
+
+## Cores Principais
+
+Com base na identidade visual da Consult Services Tecnologia:
+
+### Azul principal
+
+Usar como cor de destaque, botões primários e elementos principais.
+
+Sugestão:
+
+```css
+--color-primary: #003B6F;
+```
+
+### Azul secundário
+
+Usar em links, ícones, badges e estados de informação.
+
+```css
+--color-secondary: #4E91D9;
+```
+
+### Azul claro
+
+Usar em fundos leves, cards informativos e elementos de apoio.
+
+```css
+--color-light-blue: #D9ECFF;
+```
+
+### Branco
+
+Usar como fundo principal.
+
+```css
+--color-white: #FFFFFF;
+```
+
+### Cinza de fundo
+
+Usar para área geral da aplicação.
+
+```css
+--color-background: #F5F7FA;
+```
+
+### Cinza de borda
+
+Usar em cards, inputs e tabelas.
+
+```css
+--color-border: #E1E7EF;
+```
+
+### Texto principal
+
+```css
+--color-text: #102A43;
+```
+
+### Texto secundário
+
+```css
+--color-muted: #6B7C93;
+```
+
+### Sucesso
+
+```css
+--color-success: #1F9D55;
+```
+
+### Atenção
+
+```css
+--color-warning: #F2A900;
+```
+
+### Erro
+
+```css
+--color-danger: #D64545;
+```
+
+---
+
+# 8. Tipografia
+
+Usar fonte moderna, legível e simples.
+
+Sugestões:
+
+* Inter;
+* Roboto;
+* Open Sans;
+* Nunito Sans.
+
+Preferência:
+
+```css
+font-family: Inter, Arial, sans-serif;
+```
+
+## Hierarquia
+
+### Título principal
+
+* Peso: 700;
+* Tamanho: 28px a 32px;
+* Cor: azul principal ou texto principal.
+
+### Títulos de seção
+
+* Peso: 600;
+* Tamanho: 20px a 24px.
+
+### Texto comum
+
+* Peso: 400;
+* Tamanho: 14px a 16px.
+
+### Labels e textos auxiliares
+
+* Peso: 500;
+* Tamanho: 12px a 14px.
+
+---
+
+# 9. Estilo Visual da Interface
+
+## Direção Geral
+
+* Layout limpo;
+* Uso de cards;
+* Boa área de respiro;
+* Poucas cores simultâneas;
+* Hierarquia clara;
+* Ícones discretos;
+* Tabelas bem organizadas;
+* Filtros simples;
+* Fluxos rápidos.
+
+## Bordas
+
+```css
+border-radius: 12px;
+```
+
+## Cards
+
+```css
+background: #FFFFFF;
+border: 1px solid #E1E7EF;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(16, 42, 67, 0.05);
+```
+
+## Botão Primário
+
+```css
+background: #003B6F;
+color: #FFFFFF;
+border-radius: 10px;
+font-weight: 600;
+```
+
+## Botão Secundário
+
+```css
+background: #FFFFFF;
+color: #003B6F;
+border: 1px solid #003B6F;
+border-radius: 10px;
+```
+
+---
+
+# 10. Stack Técnica Sugerida
+
+## Front-end
+
+* Next.js;
+* React;
+* TypeScript;
+* Tailwind CSS;
+* shadcn/ui ou biblioteca equivalente;
+* Vercel para deploy.
+
+## Back-end
+
+* API routes do Next.js ou backend Node.js separado;
+* TypeScript;
+* Supabase como banco principal.
+
+## Banco de Dados
+
+* Supabase PostgreSQL;
+* Row Level Security, se aplicável;
+* Estrutura multi-tenant desde o início.
+
+## Autenticação
+
+* Supabase Auth;
+* Login por e-mail e senha;
+* Futuramente login Google.
+
+## IA
+
+* OpenAI API ou outro provedor compatível;
+* IA para classificação, resumo, prioridade e sugestão de resposta;
+* Logs das classificações para auditoria.
+
+## Automações
+
+* n8n para:
+
+  * notificações;
+  * resumo diário;
+  * resumo semanal;
+  * envio de e-mails;
+  * integrações futuras;
+  * integração futura com WhatsApp Cloud API.
+
+## Infraestrutura
+
+* Vercel para aplicação;
+* Supabase para banco e autenticação;
+* n8n para automações;
+* domínio próprio futuramente.
+
+---
+
+# 11. Perfis de Usuário
+
+## Administrador da Plataforma
+
+Perfil interno da Consult Services Tecnologia.
+
+Permissões:
+
+* cadastrar organizações;
+* visualizar clientes;
+* ativar/desativar organizações;
+* acompanhar uso da plataforma;
+* acessar logs técnicos;
+* configurar planos.
+
+## Administrador da Escola
+
+Perfil gestor da instituição.
+
+Permissões:
+
+* configurar escola;
+* cadastrar setores;
+* cadastrar usuários;
+* editar categorias;
+* visualizar todos os tickets;
+* acessar dashboard geral;
+* configurar prazos;
+* acessar relatórios.
+
+## Gestor
+
+Perfil de direção ou coordenação.
+
+Permissões:
+
+* visualizar demandas da escola;
+* filtrar por setor;
+* acompanhar indicadores;
+* redistribuir responsáveis;
+* comentar em tickets;
+* encerrar ou reabrir demandas.
+
+## Atendente
+
+Perfil operacional.
+
+Permissões:
+
+* criar demandas;
+* atender demandas atribuídas;
+* responder solicitantes;
+* alterar status;
+* consultar base de conhecimento;
+* usar sugestão de IA.
+
+## Responsável de Setor
+
+Perfil de usuário vinculado a um setor.
+
+Permissões:
+
+* visualizar demandas do setor;
+* assumir demandas;
+* alterar status;
+* responder internamente;
+* concluir atendimento.
+
+## Solicitante Externo
+
+Não precisa ter login no MVP.
+
+Acessa formulário público e acompanha, futuramente, por protocolo.
+
+---
+
+# 12. Módulos do MVP
+
+## 12.1 Login e Autenticação
+
+### Requisitos
+
+* Login por e-mail e senha;
+* Recuperação de senha;
+* Controle de sessão;
+* Proteção de rotas internas.
+
+### Campos
+
+* E-mail;
+* Senha.
+
+### Validações
+
+* E-mail obrigatório;
+* Senha obrigatória;
+* Mensagem de erro clara;
+* Redirecionamento para dashboard após login.
+
+---
+
+## 12.2 Dashboard Principal
+
+### Objetivo
+
+Dar visão rápida para gestores e atendentes sobre a situação das demandas.
+
+### Indicadores mínimos
+
+* Total de demandas abertas;
+* Total em andamento;
+* Total aguardando solicitante;
+* Total resolvidas;
+* Total atrasadas;
+* Tempo médio de resposta;
+* Demandas por setor;
+* Demandas por categoria;
+* Demandas por prioridade.
+
+### Filtros
+
+* Período;
+* Setor;
+* Categoria;
+* Status;
+* Responsável.
+
+### Cards Sugeridos
+
+1. Demandas abertas.
+2. Demandas em atraso.
+3. Resolvidas no período.
+4. Tempo médio de resposta.
+5. Setor com maior volume.
+6. Categoria mais recorrente.
+
+---
+
+## 12.3 Gestão de Demandas
+
+### Objetivo
+
+Permitir o acompanhamento completo dos atendimentos.
+
+### Tela de Lista
+
+A lista de demandas deve conter:
+
+* Protocolo;
+* Solicitante;
+* Aluno, se houver;
+* Categoria;
+* Setor;
+* Prioridade;
+* Status;
+* Responsável;
+* Data de abertura;
+* Prazo;
+* Indicador de atraso.
+
+### Filtros
+
+* Busca por protocolo;
+* Busca por nome do solicitante;
+* Status;
+* Setor;
+* Categoria;
+* Prioridade;
+* Responsável;
+* Data inicial;
+* Data final.
+
+### Ações
+
+* Ver detalhe;
+* Alterar responsável;
+* Alterar status;
+* Criar nova demanda;
+* Exportar CSV, se possível.
+
+---
+
+## 12.4 Detalhe da Demanda
+
+### Objetivo
+
+Centralizar todo o histórico e atendimento da solicitação.
+
+### Informações exibidas
+
+* Protocolo;
+* Status;
+* Prioridade;
+* Categoria;
+* Setor;
+* Responsável;
+* Solicitante;
+* Dados de contato;
+* Aluno relacionado;
+* Mensagem original;
+* Resumo gerado pela IA;
+* Sugestão de resposta;
+* Histórico de interações;
+* Comentários internos;
+* Data de criação;
+* Data de atualização;
+* Prazo;
+* Data de conclusão.
+
+### Ações
+
+* Assumir demanda;
+* Alterar setor;
+* Alterar categoria;
+* Alterar prioridade;
+* Alterar status;
+* Adicionar comentário interno;
+* Adicionar resposta ao solicitante;
+* Usar resposta sugerida pela IA;
+* Reprocessar IA;
+* Concluir demanda;
+* Reabrir demanda.
+
+---
+
+## 12.5 Cadastro Manual de Demanda
+
+### Objetivo
+
+Permitir que a secretaria registre no sistema demandas recebidas por outros canais, como WhatsApp, telefone ou presencialmente.
+
+### Campos
+
+* Nome do solicitante;
+* Telefone;
+* E-mail;
+* Nome do aluno;
+* Turma;
+* Canal de origem;
+* Mensagem da solicitação;
+* Categoria, opcional;
+* Setor, opcional;
+* Prioridade, opcional;
+* Observações internas.
+
+### Canais de Origem
+
+* Formulário;
+* WhatsApp manual;
+* E-mail;
+* Telefone;
+* Presencial;
+* Interno;
+* Outro.
+
+### Comportamento
+
+Ao salvar, a IA deve ser acionada para sugerir:
+
+* categoria;
+* setor;
+* prioridade;
+* resumo;
+* resposta inicial.
+
+---
+
+## 12.6 Formulário Público de Solicitação
+
+### Objetivo
+
+Permitir que responsáveis ou alunos abram solicitações sem login.
+
+### Campos
+
+* Nome do solicitante;
+* Tipo de solicitante:
+
+  * Responsável;
+  * Aluno;
+  * Colaborador;
+  * Outro.
+* Nome do aluno;
+* Turma;
+* Telefone;
+* E-mail;
+* Assunto;
+* Descrição da solicitação;
+* Autorização de uso dos dados para atendimento.
+
+### Após Envio
+
+O sistema deve:
+
+1. Criar protocolo;
+2. Exibir mensagem de confirmação;
+3. Classificar a demanda com IA;
+4. Direcionar para setor;
+5. Registrar histórico.
+
+### Mensagem de Confirmação
+
+“Solicitação registrada com sucesso. Seu protocolo é: [PROTOCOLO]. A escola dará continuidade ao atendimento conforme a prioridade e o setor responsável.”
+
+---
+
+## 12.7 Classificação por IA
+
+### Objetivo
+
+Usar IA para auxiliar a triagem inicial da demanda.
+
+### Entrada para IA
+
+* Texto da solicitação;
+* Assunto;
+* Canal de origem;
+* Dados opcionais do solicitante;
+* Categorias disponíveis;
+* Setores disponíveis.
+
+### Saída esperada da IA
+
+A resposta da IA deve ser sempre em JSON válido.
+
+```json
+{
+  "categoria": "financeiro_boleto",
+  "setor": "financeiro",
+  "prioridade": "media",
+  "resumo": "Responsável solicita segunda via de boleto referente ao mês atual.",
+  "resposta_sugerida": "Olá! Recebemos sua solicitação de segunda via de boleto. Nossa equipe financeira irá verificar e retornar em breve.",
+  "confianca": 0.92,
+  "necessita_humano": true
+}
+```
+
+### Categorias iniciais
+
+#### Secretaria
+
+* declaração escolar;
+* atualização cadastral;
+* documentos;
+* horário;
+* matrícula;
+* rematrícula;
+* transferência.
+
+#### Financeiro
+
+* segunda via de boleto;
+* vencimento;
+* pagamento;
+* comprovante;
+* negociação;
+* mensalidade.
+
+#### Coordenação
+
+* reunião;
+* comportamento;
+* rendimento;
+* orientação pedagógica;
+* acompanhamento de aluno.
+
+#### Eventos
+
+* autorização;
+* calendário;
+* horário de evento;
+* inscrição;
+* presença.
+
+#### TI/Suporte
+
+* acesso ao portal;
+* senha;
+* aplicativo;
+* e-mail;
+* sistema.
+
+#### Outros
+
+* demanda não classificada;
+* assunto geral.
+
+### Regras de confiança
+
+* Se confiança maior ou igual a 0.80, preencher automaticamente categoria, setor e prioridade.
+* Se confiança entre 0.60 e 0.79, sugerir, mas destacar como “revisar”.
+* Se confiança menor que 0.60, classificar como “outros” e solicitar revisão humana.
+
+---
+
+## 12.8 Base de Conhecimento
+
+### Objetivo
+
+Permitir que a escola cadastre respostas padrão para demandas recorrentes.
+
+### Campos
+
+* Título;
+* Categoria;
+* Setor;
+* Pergunta ou intenção;
+* Resposta padrão;
+* Status:
+
+  * ativa;
+  * inativa.
+* Tags;
+* Data de criação;
+* Última atualização.
+
+### Uso
+
+A base de conhecimento deve ser usada para:
+
+* apoiar respostas sugeridas;
+* padronizar atendimento;
+* reduzir retrabalho;
+* alimentar futuras automações.
+
+---
+
+## 12.9 Setores
+
+### Setores iniciais
+
+* Secretaria;
+* Financeiro;
+* Coordenação;
+* Direção;
+* TI/Suporte;
+* Eventos;
+* Geral.
+
+### Campos
+
+* Nome do setor;
+* Descrição;
+* Usuário responsável padrão;
+* Prazo padrão em horas;
+* Status ativo/inativo.
+
+---
+
+## 12.10 Usuários
+
+### Campos
+
+* Nome;
+* E-mail;
+* Perfil;
+* Setor vinculado;
+* Status;
+* Data de criação.
+
+### Ações
+
+* Criar usuário;
+* Editar usuário;
+* Desativar usuário;
+* Redefinir senha, se aplicável.
+
+---
+
+## 12.11 Regras de SLA
+
+### Objetivo
+
+Definir prazos por categoria, prioridade ou setor.
+
+### Prioridades
+
+* Baixa;
+* Média;
+* Alta;
+* Urgente.
+
+### Regras sugeridas
+
+* Baixa: 72 horas;
+* Média: 48 horas;
+* Alta: 24 horas;
+* Urgente: 4 horas.
+
+### Comportamento
+
+O sistema deve destacar visualmente demandas próximas do vencimento ou atrasadas.
+
+---
+
+## 12.12 Notificações
+
+### MVP
+
+No MVP, as notificações podem ser internas no painel.
+
+### Futuro
+
+* E-mail;
+* WhatsApp;
+* resumo diário;
+* resumo semanal;
+* alerta de atraso;
+* alerta para gestor.
+
+---
+
+# 13. Status das Demandas
+
+Usar os seguintes status:
+
+```text
+novo
+em_analise
+aguardando_responsavel
+aguardando_solicitante
+em_atendimento
+resolvido
+cancelado
+reaberto
+```
+
+## Descrição
+
+### Novo
+
+Demanda criada e ainda não assumida.
+
+### Em análise
+
+Demanda está sendo avaliada.
+
+### Aguardando responsável
+
+Demanda precisa ser assumida por alguém.
+
+### Aguardando solicitante
+
+Equipe aguarda retorno do responsável, aluno ou solicitante.
+
+### Em atendimento
+
+Demanda está sendo tratada.
+
+### Resolvido
+
+Atendimento concluído.
+
+### Cancelado
+
+Demanda encerrada sem continuidade.
+
+### Reaberto
+
+Demanda foi reaberta após conclusão.
+
+---
+
+# 14. Prioridades
+
+```text
+baixa
+media
+alta
+urgente
+```
+
+## Baixa
+
+Solicitações informativas ou sem impacto imediato.
+
+## Média
+
+Solicitações comuns que exigem tratamento dentro do prazo padrão.
+
+## Alta
+
+Solicitações com impacto operacional ou urgência percebida.
+
+## Urgente
+
+Solicitações críticas, sensíveis ou que exigem ação rápida.
+
+---
+
+# 15. Requisitos de UX
+
+## Princípios
+
+1. O sistema deve ser simples para a secretaria.
+2. A criação de uma demanda deve ser rápida.
+3. A lista de demandas deve ser fácil de filtrar.
+4. O gestor deve entender a situação em poucos segundos.
+5. A IA deve ajudar, não decidir sozinha.
+6. Toda sugestão da IA deve poder ser revisada.
+7. O histórico deve ser claro.
+8. O sistema deve evitar telas poluídas.
+
+## Jornada da Secretaria
+
+A secretaria precisa conseguir:
+
+1. Entrar no sistema;
+2. Ver demandas novas;
+3. Abrir detalhe;
+4. Ler resumo da IA;
+5. Assumir demanda;
+6. Responder;
+7. Alterar status;
+8. Concluir.
+
+Essa jornada deve exigir poucos cliques.
+
+## Jornada do Gestor
+
+O gestor precisa conseguir:
+
+1. Ver volume geral;
+2. Ver demandas atrasadas;
+3. Ver setor mais sobrecarregado;
+4. Ver responsáveis;
+5. Ver principais assuntos;
+6. Cobrar ou redistribuir demandas.
+
+## Jornada do Solicitante
+
+O solicitante precisa conseguir:
+
+1. Acessar formulário;
+2. Enviar solicitação;
+3. Receber protocolo;
+4. Entender que a escola irá retornar.
+
+---
+
+# 16. Requisitos de UI
+
+## Layout Interno
+
+Usar estrutura com:
+
+* menu lateral;
+* topo com nome da escola e usuário;
+* área principal com conteúdo;
+* cards de resumo;
+* tabelas;
+* filtros;
+* modais para ações rápidas.
+
+## Menu Lateral
+
+Itens sugeridos:
+
+1. Dashboard;
+2. Demandas;
+3. Nova demanda;
+4. Base de conhecimento;
+5. Setores;
+6. Usuários;
+7. Configurações.
+
+## Topo
+
+Deve conter:
+
+* nome da escola;
+* ambiente;
+* usuário logado;
+* botão de sair;
+* futuramente notificações.
+
+## Tabelas
+
+As tabelas devem ter:
+
+* cabeçalho fixo, se possível;
+* filtros visíveis;
+* paginação;
+* busca;
+* badges coloridos para status e prioridade;
+* ação rápida para abrir detalhe.
+
+## Badges de Status
+
+Sugestão visual:
+
+* Novo: azul;
+* Em análise: amarelo;
+* Em atendimento: azul claro;
+* Aguardando solicitante: laranja;
+* Resolvido: verde;
+* Cancelado: cinza;
+* Reaberto: roxo.
+
+## Badges de Prioridade
+
+* Baixa: cinza;
+* Média: azul;
+* Alta: laranja;
+* Urgente: vermelho.
+
+---
+
+# 17. Responsividade
+
+O MVP deve funcionar bem em:
+
+* desktop;
+* notebook;
+* tablet.
+
+Mobile pode ser responsivo básico no MVP, mas o foco inicial deve ser desktop, pois o principal usuário será administrativo.
+
+## Regras
+
+* Menu lateral pode virar menu recolhido em telas menores;
+* Tabelas devem permitir rolagem horizontal;
+* Cards devem se reorganizar em coluna;
+* Formulários devem ficar legíveis em telas menores.
+
+---
+
+# 18. Acessibilidade
+
+Aplicar boas práticas básicas:
+
+* contraste adequado;
+* labels em todos os campos;
+* botões com texto claro;
+* navegação por teclado, quando possível;
+* mensagens de erro visíveis;
+* feedback visual após ações.
+
+---
+
+# 19. LGPD e Segurança
+
+## Dados tratados
+
+* nome do solicitante;
+* telefone;
+* e-mail;
+* nome do aluno;
+* turma;
+* conteúdo da solicitação;
+* histórico de atendimento.
+
+## Requisitos mínimos
+
+* Solicitar consentimento no formulário público;
+* Informar finalidade do uso dos dados;
+* Restringir acesso por perfil;
+* Registrar logs de ações relevantes;
+* Não expor dados entre escolas diferentes;
+* Utilizar HTTPS;
+* Proteger rotas autenticadas;
+* Criar estrutura multi-tenant segura.
+
+## Texto de consentimento no formulário
+
+“Ao enviar esta solicitação, autorizo o uso dos dados informados exclusivamente para fins de atendimento, acompanhamento e retorno pela instituição de ensino.”
+
+---
+
+# 20. Estrutura de Banco de Dados
+
+## organizations
+
+Representa cada escola ou instituição.
+
+Campos sugeridos:
+
+```sql
+id uuid primary key
+name text not null
+slug text unique
+document text
+email text
+phone text
+status text default 'active'
+created_at timestamp
+updated_at timestamp
+```
+
+## users
+
+Usuários internos da plataforma.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+name text not null
+email text not null
+role text not null
+department_id uuid
+status text default 'active'
+created_at timestamp
+updated_at timestamp
+```
+
+## departments
+
+Setores da escola.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+name text not null
+description text
+default_user_id uuid
+default_sla_hours integer
+status text default 'active'
+created_at timestamp
+updated_at timestamp
+```
+
+## requesters
+
+Solicitantes externos.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+name text not null
+type text
+phone text
+email text
+student_name text
+student_class text
+created_at timestamp
+updated_at timestamp
+```
+
+## tickets
+
+Demandas.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+requester_id uuid references requesters(id)
+protocol text unique not null
+title text
+original_message text not null
+summary text
+category text
+department_id uuid references departments(id)
+priority text
+status text
+assigned_user_id uuid
+origin_channel text
+due_at timestamp
+resolved_at timestamp
+created_at timestamp
+updated_at timestamp
+```
+
+## ticket_messages
+
+Histórico e interações.
+
+```sql
+id uuid primary key
+ticket_id uuid references tickets(id)
+user_id uuid
+message_type text
+content text not null
+is_internal boolean default false
+created_at timestamp
+```
+
+## knowledge_base
+
+Base de conhecimento.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+title text not null
+category text
+department_id uuid references departments(id)
+question text
+answer text not null
+tags text[]
+status text default 'active'
+created_at timestamp
+updated_at timestamp
+```
+
+## ai_classifications
+
+Histórico de classificações da IA.
+
+```sql
+id uuid primary key
+ticket_id uuid references tickets(id)
+provider text
+model text
+input_text text
+category text
+department text
+priority text
+summary text
+suggested_response text
+confidence numeric
+needs_human boolean
+raw_response jsonb
+created_at timestamp
+```
+
+## audit_logs
+
+Logs de auditoria.
+
+```sql
+id uuid primary key
+organization_id uuid references organizations(id)
+user_id uuid
+entity_type text
+entity_id uuid
+action text
+old_data jsonb
+new_data jsonb
+created_at timestamp
+```
+
+---
+
+# 21. Regras de Protocolo
+
+Cada demanda deve receber um protocolo único.
+
+Formato sugerido:
+
+```text
+CFE-YYYYMMDD-0001
+```
+
+Exemplo:
+
+```text
+CFE-20260622-0001
+```
+
+Onde:
+
+* CFE = ConsultFlow Edu;
+* YYYYMMDD = data de criação;
+* 0001 = sequência diária.
+
+---
+
+# 22. API Interna Sugerida
+
+## Autenticação
+
+```http
+POST /api/auth/login
+POST /api/auth/logout
+POST /api/auth/reset-password
+```
+
+## Organizações
+
+```http
+GET /api/organizations
+POST /api/organizations
+GET /api/organizations/:id
+PUT /api/organizations/:id
+```
+
+## Usuários
+
+```http
+GET /api/users
+POST /api/users
+GET /api/users/:id
+PUT /api/users/:id
+```
+
+## Setores
+
+```http
+GET /api/departments
+POST /api/departments
+PUT /api/departments/:id
+```
+
+## Demandas
+
+```http
+GET /api/tickets
+POST /api/tickets
+GET /api/tickets/:id
+PUT /api/tickets/:id
+POST /api/tickets/:id/messages
+POST /api/tickets/:id/reclassify
+POST /api/tickets/:id/resolve
+POST /api/tickets/:id/reopen
+```
+
+## Formulário Público
+
+```http
+GET /public/:organizationSlug
+POST /api/public/:organizationSlug/tickets
+```
+
+## IA
+
+```http
+POST /api/ai/classify-ticket
+POST /api/ai/suggest-response
+POST /api/ai/summarize-ticket
+```
+
+## Dashboard
+
+```http
+GET /api/dashboard/summary
+GET /api/dashboard/by-status
+GET /api/dashboard/by-department
+GET /api/dashboard/by-category
+```
+
+---
+
+# 23. Prompts Base da IA
+
+## Prompt de Classificação
+
+```text
+Você é um assistente especializado em atendimento escolar.
+
+Analise a solicitação abaixo e classifique a demanda conforme os setores, categorias e prioridades disponíveis.
+
+Retorne somente JSON válido. Não adicione explicações fora do JSON.
+
+Setores disponíveis:
+- secretaria
+- financeiro
+- coordenacao
+- direcao
+- ti_suporte
+- eventos
+- geral
+
+Prioridades disponíveis:
+- baixa
+- media
+- alta
+- urgente
+
+Texto da solicitação:
+{{texto_solicitacao}}
+
+Retorne no formato:
+
+{
+  "categoria": "",
+  "setor": "",
+  "prioridade": "",
+  "resumo": "",
+  "resposta_sugerida": "",
+  "confianca": 0,
+  "necessita_humano": true
+}
+```
+
+## Prompt de Sugestão de Resposta
+
+```text
+Você é um assistente de atendimento escolar.
+
+Crie uma resposta educada, clara e objetiva para a solicitação abaixo.
+
+A resposta deve:
+- reconhecer o pedido;
+- informar que a escola dará continuidade;
+- evitar prometer solução imediata;
+- manter tom profissional e acolhedor;
+- não inventar informações.
+
+Solicitação:
+{{texto_solicitacao}}
+
+Categoria:
+{{categoria}}
+
+Setor:
+{{setor}}
+
+Retorne somente a resposta final.
+```
+
+## Prompt de Resumo
+
+```text
+Resuma a solicitação abaixo em até 300 caracteres, mantendo apenas a informação essencial para o atendente.
+
+Solicitação:
+{{texto_solicitacao}}
+```
+
+---
+
+# 24. Regras de Negócio
+
+## Criação de Demanda
+
+1. Toda demanda deve ter protocolo.
+2. Toda demanda deve ter organização vinculada.
+3. Toda demanda deve iniciar com status `novo`.
+4. Se a IA conseguir classificar com confiança adequada, preencher categoria, setor e prioridade.
+5. Se a IA não tiver confiança, enviar para setor geral ou revisão humana.
+6. Toda criação deve gerar log.
+
+## Alteração de Status
+
+1. Somente usuários autenticados podem alterar status.
+2. Ao resolver, preencher `resolved_at`.
+3. Ao reabrir, limpar ou manter histórico de resolução anterior conforme decisão técnica.
+4. Toda mudança de status deve gerar mensagem no histórico.
+
+## Responsável
+
+1. Demanda pode iniciar sem responsável.
+2. Um usuário pode assumir demanda.
+3. Gestor pode trocar responsável.
+4. Troca de responsável deve gerar log.
+
+## SLA
+
+1. O prazo deve ser calculado com base na prioridade.
+2. Caso exista regra específica por setor, usar a regra do setor.
+3. Demandas vencidas devem aparecer destacadas.
+4. Dashboard deve contabilizar demandas atrasadas.
+
+---
+
+# 25. Dados Iniciais para Seed
+
+## Setores
+
+```text
+Secretaria
+Financeiro
+Coordenação
+Direção
+TI/Suporte
+Eventos
+Geral
+```
+
+## Prioridades
+
+```text
+Baixa
+Média
+Alta
+Urgente
+```
+
+## Status
+
+```text
+Novo
+Em análise
+Aguardando responsável
+Aguardando solicitante
+Em atendimento
+Resolvido
+Cancelado
+Reaberto
+```
+
+## Canais de Origem
+
+```text
+Formulário
+WhatsApp manual
+E-mail
+Telefone
+Presencial
+Interno
+Outro
+```
+
+---
+
+# 26. Telas do MVP
+
+## Tela 1: Login
+
+Componentes:
+
+* Logo Consult Services Tecnologia;
+* Nome do produto: ConsultFlow Edu;
+* Campo e-mail;
+* Campo senha;
+* Botão entrar;
+* Link recuperar senha.
+
+## Tela 2: Dashboard
+
+Componentes:
+
+* Cards de indicadores;
+* Gráfico por status;
+* Gráfico por setor;
+* Lista de demandas recentes;
+* Lista de demandas atrasadas.
+
+## Tela 3: Demandas
+
+Componentes:
+
+* Tabela;
+* Filtros;
+* Busca;
+* Botão nova demanda;
+* Badges de status;
+* Badges de prioridade.
+
+## Tela 4: Detalhe da Demanda
+
+Componentes:
+
+* Cabeçalho com protocolo e status;
+* Dados do solicitante;
+* Dados do aluno;
+* Mensagem original;
+* Resumo da IA;
+* Sugestão da IA;
+* Histórico;
+* Comentário interno;
+* Botões de ação.
+
+## Tela 5: Nova Demanda
+
+Componentes:
+
+* Dados do solicitante;
+* Dados do aluno;
+* Canal de origem;
+* Descrição;
+* Botão salvar;
+* Após salvar, exibir protocolo.
+
+## Tela 6: Formulário Público
+
+Componentes:
+
+* Logo da escola ou ConsultFlow Edu;
+* Campos do solicitante;
+* Campo da solicitação;
+* Checkbox de consentimento;
+* Botão enviar;
+* Tela de sucesso com protocolo.
+
+## Tela 7: Base de Conhecimento
+
+Componentes:
+
+* Lista de respostas;
+* Busca;
+* Categoria;
+* Setor;
+* Botão nova resposta;
+* Ativar/desativar resposta.
+
+## Tela 8: Configurações
+
+Componentes:
+
+* Dados da escola;
+* Setores;
+* Usuários;
+* Categorias;
+* SLA;
+* Preferências.
+
+---
+
+# 27. Critérios de Aceite
+
+## Login
+
+* Usuário consegue entrar com credenciais válidas.
+* Usuário inválido recebe erro claro.
+* Rotas internas não podem ser acessadas sem login.
+
+## Formulário Público
+
+* Solicitante consegue abrir demanda sem login.
+* Sistema gera protocolo.
+* Demanda aparece no painel interno.
+* IA classifica a solicitação.
+
+## Cadastro Manual
+
+* Atendente consegue criar demanda manualmente.
+* Demanda recebe protocolo.
+* Demanda aparece na lista.
+* IA sugere categoria, setor, prioridade e resposta.
+
+## Gestão de Demandas
+
+* Usuário consegue filtrar demandas.
+* Usuário consegue abrir detalhe.
+* Usuário consegue alterar status.
+* Usuário consegue assumir demanda.
+* Usuário consegue registrar comentário.
+* Usuário consegue concluir demanda.
+
+## Dashboard
+
+* Indicadores refletem os dados reais.
+* Demandas atrasadas aparecem corretamente.
+* Filtros funcionam por período, setor e status.
+
+## IA
+
+* IA retorna JSON válido.
+* Sistema trata erro da IA sem quebrar o fluxo.
+* Classificação fica registrada em `ai_classifications`.
+* Usuário pode revisar campos sugeridos.
+
+---
+
+# 28. Requisitos Não Funcionais
+
+## Performance
+
+* Dashboard deve carregar em até 3 segundos para volumes pequenos.
+* Lista de demandas deve usar paginação.
+* Consultas devem ser filtradas por organização.
+
+## Segurança
+
+* Não permitir acesso cruzado entre organizações.
+* Sanitizar entradas de texto.
+* Proteger endpoints internos.
+* Usar variáveis de ambiente para chaves.
+
+## Manutenção
+
+* Código em TypeScript.
+* Componentes reutilizáveis.
+* Separar regra de negócio da camada visual.
+* Criar documentação básica de instalação.
+
+## Escalabilidade
+
+* Estrutura multi-tenant;
+* Banco preparado para múltiplas escolas;
+* APIs organizadas por domínio;
+* IA desacoplada em serviço/função própria.
+
+---
+
+# 29. Variáveis de Ambiente
+
+Exemplo:
+
+```env
+NEXT_PUBLIC_APP_NAME=ConsultFlow Edu
+NEXT_PUBLIC_APP_URL=https://consultflowedu.com.br
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4o-mini
+
+N8N_WEBHOOK_URL=
+N8N_API_KEY=
+```
+
+---
+
+# 30. Deploy
+
+## Ambiente de Desenvolvimento
+
+* Rodar local com Next.js;
+* Usar Supabase projeto dev;
+* Variáveis `.env.local`.
+
+## Ambiente de Homologação
+
+* Deploy na Vercel;
+* Supabase separado ou schema separado;
+* IA ativa com limite de uso.
+
+## Ambiente de Produção
+
+* Vercel;
+* Supabase produção;
+* Domínio oficial;
+* Logs e monitoramento.
+
+---
+
+# 31. Roadmap Técnico
+
+## Sprint 1: Base do Projeto
+
+* Criar projeto Next.js;
+* Configurar Supabase;
+* Configurar autenticação;
+* Criar layout base;
+* Criar tema visual;
+* Criar menu lateral;
+* Criar estrutura de rotas.
+
+## Sprint 2: Banco e Cadastros
+
+* Criar tabelas;
+* Criar seeds;
+* Criar usuários;
+* Criar organizações;
+* Criar setores;
+* Criar permissões básicas.
+
+## Sprint 3: Demandas
+
+* Criar tabela de demandas;
+* Criar lista;
+* Criar detalhe;
+* Criar cadastro manual;
+* Criar histórico;
+* Criar alteração de status.
+
+## Sprint 4: Formulário Público
+
+* Criar página pública por escola;
+* Criar envio de solicitação;
+* Gerar protocolo;
+* Salvar solicitante;
+* Salvar demanda.
+
+## Sprint 5: IA
+
+* Criar endpoint de classificação;
+* Integrar OpenAI;
+* Salvar retorno;
+* Exibir resumo e sugestão;
+* Tratar erros;
+* Permitir reprocessar.
+
+## Sprint 6: Dashboard
+
+* Criar cards;
+* Criar métricas;
+* Criar filtros;
+* Criar demandas atrasadas;
+* Criar indicadores por setor/status.
+
+## Sprint 7: Base de Conhecimento
+
+* Criar CRUD;
+* Associar categoria e setor;
+* Usar na sugestão de resposta;
+* Ativar/inativar registros.
+
+## Sprint 8: Ajustes para Piloto
+
+* Revisar UX;
+* Corrigir bugs;
+* Criar dados de demonstração;
+* Criar documentação;
+* Preparar ambiente para apresentação.
+
+---
+
+# 32. Itens Fora do MVP
+
+Não desenvolver na primeira versão:
+
+* WhatsApp Cloud API obrigatória;
+* App mobile;
+* integração profunda com ERP escolar;
+* assinatura digital;
+* cobrança financeira;
+* portal completo do responsável;
+* BI avançado;
+* multiunidade complexo;
+* chat em tempo real;
+* voz;
+* OCR;
+* anexos complexos.
+
+Esses itens devem ficar como evolução futura.
+
+---
+
+# 33. Evoluções Futuras
+
+## WhatsApp
+
+* Integração com WhatsApp Cloud API;
+* Templates aprovados;
+* Janela de 24h;
+* Resposta automatizada;
+* Histórico de conversas.
+
+## E-mail
+
+* Captura automática de e-mails;
+* Criação de demanda a partir de e-mail;
+* Resposta assistida.
+
+## Portal do Responsável
+
+* Acompanhamento por protocolo;
+* Histórico de solicitações;
+* Upload de documentos.
+
+## Integrações
+
+* Google Drive;
+* Google Calendar;
+* ERPs escolares;
+* CRMs;
+* Sistemas financeiros;
+* BI.
+
+## IA Avançada
+
+* Aprendizado com base de conhecimento;
+* Análise de sentimento;
+* Detecção de urgência crítica;
+* Sugestão de melhoria operacional;
+* Resumo semanal automático para direção.
+
+---
+
+# 34. Entrega Esperada do Dev
+
+Ao final do MVP, espera-se que o dev entregue:
+
+1. Aplicação web funcional;
+2. Banco de dados estruturado;
+3. Autenticação;
+4. Gestão de organizações;
+5. Gestão de usuários;
+6. Gestão de setores;
+7. Formulário público;
+8. Cadastro manual de demandas;
+9. Lista e detalhe de demandas;
+10. Classificação com IA;
+11. Base de conhecimento;
+12. Dashboard inicial;
+13. Controle de status e prioridade;
+14. Logs básicos;
+15. Deploy em ambiente de homologação;
+16. Instruções de instalação;
+17. Documentação técnica básica;
+18. Lista de pendências e próximos passos.
+
+---
+
+# 35. Observação Estratégica
+
+O ConsultFlow Edu deve ser construído como produto SaaS multi-tenant desde o início, mesmo que o MVP seja testado com uma única escola.
+
+Isso evita retrabalho futuro e permite transformar o MVP em solução comercial para múltiplas instituições.
+
+A primeira versão deve priorizar simplicidade, clareza e validação do problema. O objetivo não é criar um sistema completo de gestão escolar, mas sim uma central inteligente de atendimento e demandas com foco em rastreabilidade, organização e indicadores.
+
+---
+
+# 36. Resumo Executivo para o Dev
+
+Desenvolver um MVP web chamado **ConsultFlow Edu**, vinculado à marca **Consult Services Tecnologia**.
+
+O sistema deverá permitir que escolas recebam solicitações por formulário público ou cadastro manual, transformando cada solicitação em uma demanda com protocolo, categoria, prioridade, setor responsável, status, histórico e prazo.
+
+A IA deverá classificar a solicitação, gerar resumo e sugerir uma resposta inicial.
+
+A equipe interna da escola deverá acompanhar as demandas por painel, alterar status, assumir responsáveis, registrar comentários e concluir atendimentos.
+
+O gestor deverá visualizar indicadores no dashboard.
+
+A primeira versão não deve depender de WhatsApp/Meta, mas a arquitetura deve permitir essa integração futuramente.
+
+O produto deve seguir identidade visual baseada em azul escuro, azul claro, branco e cinza, com layout limpo, corporativo e simples de usar.
+
+---
