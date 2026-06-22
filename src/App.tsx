@@ -6,6 +6,11 @@ import { TicketsPage } from './pages/Tickets';
 import { PublicFormPage } from './pages/PublicForm';
 import { TicketDetailPage } from './pages/TicketDetail';
 import { LoginPage } from './pages/Login';
+import { UsersPage } from './pages/Users';
+import { SettingsPage } from './pages/Settings';
+import { NewTicketPage } from './pages/NewTicket';
+import { KnowledgeBasePage } from './pages/KnowledgeBase';
+import { DepartmentsPage } from './pages/Departments';
 
 // Simulador de rota protegida
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -26,21 +31,11 @@ export default function App() {
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="tickets" element={<TicketsPage />} />
           <Route path="tickets/:id" element={<TicketDetailPage />} />
-          <Route path="tickets/new" element={
-            <div className="p-8 text-center text-muted">Tela de Nova Demanda Manual (Em Breve)</div>
-          } />
-          <Route path="knowledge" element={
-            <div className="p-8 text-center text-muted">Módulo de Base de Conhecimento (Em Breve)</div>
-          } />
-          <Route path="departments" element={
-            <div className="p-8 text-center text-muted">Gestão de Setores (Em Breve)</div>
-          } />
-          <Route path="users" element={
-            <div className="p-8 text-center text-muted">Gestão de Usuários (Em Breve)</div>
-          } />
-          <Route path="settings" element={
-            <div className="p-8 text-center text-muted">Configurações Gerais (Em Breve)</div>
-          } />
+          <Route path="tickets/new" element={<NewTicketPage />} />
+          <Route path="knowledge" element={<KnowledgeBasePage />} />
+          <Route path="departments" element={<DepartmentsPage />} />
+          <Route path="users" element={<UsersPage />} />
+          <Route path="settings" element={<SettingsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
